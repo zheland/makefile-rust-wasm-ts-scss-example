@@ -7,7 +7,7 @@ This is an example of Web application built with Makefile that includes:
 * CSS compiled from SCSS, compressed, minified and uglified
 * Rust-generated WebAssembly run synchronously and asynchronously with WebWorker
 
-Another features:
+Other features:
 * Incremental compilation
 * Synchronised browser testing with browser-sync
 * TypeScript SourceMap generation.
