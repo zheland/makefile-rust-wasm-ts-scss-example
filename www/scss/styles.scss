@@ -1,0 +1,11 @@
+$colors: (
+    first: #91705a,
+    second: #7d7755,
+    third: #647d61,
+);
+
+@each $name, $color in $colors {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "name": "makefile-rust-wasm-ts-scss-example",
+    "version": "1.0.0",
+    "description": "Web application example with Makefile, Rust-generated WASM, TypeScript and SCSS",
+    "scripts": {
+        "clean": "make clean",
+        "build": "make -rR all",
+        "build-dev": "make -rR dev",
+        "build-rel": "make -rR rel",
+        "rebuild": "npm run clean && npm run build",
+        "build-parallel": "make -rRj8 all",
+        "build-dev-parallel": "make -rRj8 dev",
+        "build-rel-parallel": "make -rRj8 rel",
+        "rebuild-parallel": "npm run clean && npm run build-parallel",
+        "watch": "bash -c \"while true; do make -rRj8 --silent all; sleep 1; done\"",
+        "watch-dev": "bash -c \"while true; do make -rRj8 --silent dev; sleep 1; done\"",
+        "watch-rel": "bash -c \"while true; do make -rRj8 --silent rel; sleep 1; done\"",
+        "sync-dev": "bash scripts/sync-dev.sh",
+        "sync-rel": "bash scripts/sync-rel.sh",
+        "sync": "bash scripts/sync.sh",
+        "test-node": "cd .. && for wasm in wasm-*; do (cd \"$wasm\" && cargo test && wasm-pack test --node ); done",
+        "test-chrome": "cd .. && for wasm in wasm-*; do (cd \"$wasm\" && cargo test && wasm-pack test --node && wasm-pack test --headless --chrome ); done",
+        "test-firefox": "cd .. && for wasm in wasm-*; do (cd \"$wasm\" && cargo test && wasm-pack test --node && wasm-pack test --headless --firefox ); done",
+        "test-safari": "cd .. && for wasm in wasm-*; do (cd \"$wasm\" && cargo test && wasm-pack test --node && wasm-pack test --headless --safari ); done"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zheland/makefile-rust-wasm-ts-scss-example.git"
+    },
+    "keywords": [
+        "makefile",
+        "example",
+        "rust",
+        "wasm",
+        "typescript",
+        "scss"
+    ],
+    "author": "Andrey Zheleznov <zheland.net@gmail.com>",
+    "license": "MIT OR Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/zheland/makefile-rust-wasm-ts-scss-example/issues"
+    },
+    "homepage": "https://github.com/zheland/makefile-rust-wasm-ts-scss-example#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.6",
+        "@babel/plugin-syntax-import-meta": "^7.8.3",
+        "@babel/plugin-transform-modules-commonjs": "^7.9.6",
+        "@babel/plugin-transform-runtime": "^7.9.6",
+        "@babel/runtime": "^7.9.6",
+        "@types/node": "^13.13.4",
+        "babel-preset-minify": "^0.5.1",
+        "browser-sync": "^2.26.7",
+        "browserify": "^16.5.1",
+        "cssnano": "^4.1.10",
+        "postcss-cli": "^7.1.1",
+        "rcs-core": "^3.3.0",
+        "sass": "^1.26.5",
+        "typescript": "^3.8.3",
+        "wasm-opt": "^1.1.1",
+        "wasmify": "^4.0.0"
+    }
+}
