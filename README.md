@@ -9,6 +9,7 @@ This is an example of Web application built with Makefile that includes:
 
 Other features:
 * Incremental compilation
+* Dev and release builds
 * Synchronised browser testing with browser-sync
 * TypeScript SourceMap generation.
 * Rust test templates for testing in node and in browser
