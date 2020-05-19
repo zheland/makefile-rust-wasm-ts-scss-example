@@ -41,5 +41,9 @@ pub fn start() {
 
 #[wasm_bindgen]
 pub fn greet() {
-    log("Async Hi!");
+    #[cfg(debug_assertions)]
+    log("Greetings from debug async wasm!");
+
+    #[cfg(not(debug_assertions))]
+    log("Greetings from release async wasm!");
 }
