@@ -134,14 +134,6 @@ build/js-babel-rel/%.js: build/js-rel/%.js babel.rel.config.js Makefile
 	@mkdir -p $(shell dirname "$@")
 	$(shell npm bin)/babel --config-file ./babel.rel.config.js "$<" -o "$@"
 
-#build/js-babel-dev/wasm_%_bg.wasm: build/wasm-dev-opt/wasm_%_bg.wasm Makefile
-#	@mkdir -p $(shell dirname "$@")
-#	cp "$<" "$@"
-
-#build/js-babel-rel/wasm_%_bg.wasm: build/wasm-rel-opt/wasm_%_bg.wasm Makefile
-#	@mkdir -p $(shell dirname "$@")
-#	cp "$<" "$@"
-
 build/js-bundle-dev/%.js: build/js-babel-dev/%.js \
 		$(addprefix build/js-babel-dev/,$(SOURCE_JS_FILES)) \
 		$(addprefix build/js-babel-dev/,$(WASM_JS_FILES)) Makefile
