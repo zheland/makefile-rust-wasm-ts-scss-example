@@ -57,7 +57,6 @@
         "rcs-core": "^3.3.0",
         "sass": "^1.26.5",
         "typescript": "^3.8.3",
-        "wasm-opt": "^1.1.1",
-        "wasmify": "^4.0.0"
+        "wasm-opt": "^1.1.1"
     }
 }
