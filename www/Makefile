@@ -23,7 +23,7 @@ C_END    = \033[0m
 
 all: dev rel
 
-.PHONY: all dev rel clean clean_intermediate FORCE $(WASM_BUILDS)
+.PHONY: all dev rel clean clean_intermediate FORCE
 
 .SECONDARY:
 
