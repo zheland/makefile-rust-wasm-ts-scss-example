@@ -26,7 +26,7 @@ run rustup self update
 run rustup update
 run rustup target add wasm32-unknown-unknown
 run cargo install wasm-pack
-run cargo install wasm-bindgen-cli --version 0.2.63
+run cargo install wasm-bindgen-cli --version 0.2.65
 
 npm_local_version=$(npm list -g npm --depth=0 | grep -oP "(?<=@)[\w-\.]*")
 npm_last_version=$(npm show npm version)
