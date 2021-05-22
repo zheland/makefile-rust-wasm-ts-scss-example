@@ -173,11 +173,11 @@ build/wasm-rel/wasm_%.wasm: FORCE scripts/build-wasm.sh Makefile
 
 build/bindgen-dev/wasm_%.js: build/wasm-dev/wasm_%.wasm Makefile
 	@printf "$(C_BLUE)Build $(C_YELLOW)RUST %-16s $(C_GRAY)rust > $(C_GREEN)dev-wasm > dev-bindgen$(C_GRAY)$(C_END)\n" "$*"
-	cd "../wasm-$*"; wasm-bindgen "../www/$<" --out-dir ../www/build/bindgen-dev --target web
+	cd "../wasm-$*"; ../tools/bin/wasm-bindgen "../www/$<" --out-dir ../www/build/bindgen-dev --target web
 
 build/bindgen-rel/wasm_%.js: build/wasm-rel/wasm_%.wasm Makefile
 	@printf "$(C_BLUE)Build $(C_YELLOW)RUST %-16s $(C_GRAY)rust > $(C_GREEN)rel-wasm > rel-bindgen$(C_GRAY)$(C_END)\n" "$*"
-	cd "../wasm-$*"; wasm-bindgen "../www/$<" --out-dir ../www/build/bindgen-rel --target web
+	cd "../wasm-$*"; ../tools/bin/wasm-bindgen "../www/$<" --out-dir ../www/build/bindgen-rel --target web
 
 build/bindgen-dev/wasm_%_bg.wasm: build/bindgen-dev/wasm_%.js Makefile
 	touch "$@"
