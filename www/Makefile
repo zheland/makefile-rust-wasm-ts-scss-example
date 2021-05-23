@@ -98,13 +98,13 @@ build/bindgen-dev-js/wasm_%.js: build/bindgen-dev/wasm_%.js Makefile
 	@printf "$(C_BLUE)Build $(C_YELLOW)RUST %-16s $(C_GRAY)rust > dev-wasm > $(C_GREEN)dev-bindgen > dev-wasm-js$(C_END)\n" "$*"
 	@mkdir -p $(shell dirname "$@")
 	cp "$<" "$@"
-	sed -e 's/import.meta.*;/"wasm_$*_bg.wasm";/g' "$<" > "$@"
+	sed -e 's/import\.meta\.url/location.href/g' "$<" > "$@"
 
 build/bindgen-rel-js/wasm_%.js: build/bindgen-rel/wasm_%.js Makefile
 	@printf "$(C_BLUE)Build $(C_YELLOW)RUST %-16s $(C_GRAY)rust > rel-wasm > $(C_GREEN)rel-bindgen > rel-wasm-js$(C_END)\n" "$*"
 	@mkdir -p $(shell dirname "$@")
 	cp "$<" "$@"
-	sed -e 's/import.meta.*;/"wasm_$*_bg.wasm";/g' "$<" > "$@"
+	sed -e 's/import\.meta\.url/location.href/g' "$<" > "$@"
 
 build/bindgen-ts/wasm_%.d.ts: build/bindgen-dev/wasm_%.d.ts Makefile
 	@printf "$(C_BLUE)Build $(C_YELLOW)RUST %-16s $(C_GRAY)rust > dev-wasm > $(C_GREEN)dev-bindgen > ts-bindgen$(C_END)\n" "$*"
