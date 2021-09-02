@@ -35,8 +35,8 @@ build wasm package for npm and initialize npm package.
 
 The project uses npm-scripts for building and testing (specified in www/package.json), for example:
 * `cd www && npm run build` to build application in development and production mode to `www/dist/dev` and `www/dist/rel`.
-* `cd www && sync-dev` to continiously rebuild application in development mode and launch the browser with a real-time reload of the files being modified.
-* `cd www && test-chrome` to test wasm code locally, in node environment and in headless chrome browser.
+* `cd www && npm run sync-dev` to continiously rebuild application in development mode and launch the browser with a real-time reload of the files being modified.
+* `cd www && npm run test-chrome` to test wasm code locally, in node environment and in headless chrome browser.
 
 Full list of npm scripts:
 `clean`,
