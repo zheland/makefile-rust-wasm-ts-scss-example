@@ -1,5 +1,13 @@
 # Web application example with Makefile, Rust-generated WASM, TypeScript and SCSS
 
+> [!WARNING]
+> **Archived: 2026-09-29**
+>
+> This repository is no longer maintained.
+>
+> Dependencies are frozen as of the last commit and may be outdated or contain
+> known vulnerabilities.
+
 ## About
 
 This is an example of Web application built with Makefile that includes:
